@@ -2,13 +2,22 @@
     "molecules": [
         {
             "atomType": "Molecule",
-            "name": "Holt Tight Latch",
-            "x": 0,
-            "y": 0,
-            "uniqueID": 979731,
+            "name": "Bolts",
+            "x": 390,
+            "y": 202,
+            "uniqueID": 775508,
             "ioValues": [],
-            "topLevel": true,
+            "topLevel": false,
             "allAtoms": [
+                {
+                    "atomType": "GitHubMolecule",
+                    "name": "M4x20 Bolt",
+                    "x": 429,
+                    "y": 199,
+                    "uniqueID": 982178,
+                    "projectID": "198850770",
+                    "ioValues": []
+                },
                 {
                     "atomType": "Output",
                     "name": "Output",
@@ -18,6 +27,116 @@
                 }
             ],
             "allConnectors": [],
+            "fileTypeVersion": 1
+        },
+        {
+            "atomType": "Molecule",
+            "name": "Holt Tight Latch",
+            "x": 0,
+            "y": 0,
+            "uniqueID": 979731,
+            "ioValues": [],
+            "topLevel": true,
+            "allAtoms": [
+                {
+                    "atomType": "Rectangle",
+                    "name": "Rectangle",
+                    "x": 195,
+                    "y": 111,
+                    "uniqueID": 877637,
+                    "ioValues": [
+                        {
+                            "name": "x length",
+                            "ioValue": 69.85
+                        },
+                        {
+                            "name": "y length",
+                            "ioValue": 30.16
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Extrude",
+                    "name": "Extrude",
+                    "x": 407,
+                    "y": 96,
+                    "uniqueID": 879347,
+                    "ioValues": [
+                        {
+                            "name": "height",
+                            "ioValue": 11.11
+                        }
+                    ]
+                },
+                {
+                    "atomType": "Molecule",
+                    "name": "Bolts",
+                    "x": 390,
+                    "y": 202,
+                    "uniqueID": 775508,
+                    "ioValues": []
+                },
+                {
+                    "atomType": "Color",
+                    "name": "Color",
+                    "x": 653,
+                    "y": 79,
+                    "uniqueID": 792861,
+                    "ioValues": [],
+                    "selectedColorIndex": "10"
+                },
+                {
+                    "atomType": "Add BOM Tag",
+                    "name": "Add BOM Tag",
+                    "x": 893,
+                    "y": 86,
+                    "uniqueID": 966075,
+                    "ioValues": [],
+                    "BOMitem": {
+                        "BOMitemName": "Tight Hold Latch",
+                        "numberNeeded": 1,
+                        "costUSD": 3.81,
+                        "source": "https://www.mcmaster.com/1794A41",
+                        "totalNeeded": 1
+                    }
+                },
+                {
+                    "atomType": "Output",
+                    "name": "Output",
+                    "x": 1316,
+                    "y": 163.5,
+                    "ioValues": []
+                }
+            ],
+            "allConnectors": [
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
+                    "ap1ID": 877637,
+                    "ap2ID": 879347
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
+                    "ap1ID": 879347,
+                    "ap2ID": 792861
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
+                    "ap1ID": 792861,
+                    "ap2ID": 966075
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 966075
+                }
+            ],
             "fileTypeVersion": 1
         }
     ],
