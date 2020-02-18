@@ -27,7 +27,7 @@
                     "ioValues": [
                         {
                             "name": "xDist",
-                            "ioValue": 21.63
+                            "ioValue": 22
                         },
                         {
                             "name": "yDist",
@@ -42,13 +42,13 @@
                 {
                     "atomType": "Translate",
                     "name": "Translate",
-                    "x": 361,
-                    "y": 118,
+                    "x": 363,
+                    "y": 120,
                     "uniqueID": 992016,
                     "ioValues": [
                         {
                             "name": "xDist",
-                            "ioValue": 21.63
+                            "ioValue": 22
                         },
                         {
                             "name": "yDist",
@@ -69,7 +69,7 @@
                     "ioValues": [
                         {
                             "name": "xDist",
-                            "ioValue": -21.63
+                            "ioValue": -22
                         },
                         {
                             "name": "yDist",
@@ -90,7 +90,7 @@
                     "ioValues": [
                         {
                             "name": "xDist",
-                            "ioValue": -21.63
+                            "ioValue": -22
                         },
                         {
                             "name": "yDist",
@@ -204,7 +204,7 @@
         },
         {
             "atomType": "Molecule",
-            "name": "Holt Tight Latch",
+            "name": "Hold Tight Latch",
             "x": 0,
             "y": 0,
             "uniqueID": 979731,
