@@ -3,8 +3,8 @@
         {
             "atomType": "Molecule",
             "name": "Bolts",
-            "x": 0.618488253319714,
-            "y": 0.40374331550802134,
+            "x": 0.5944841675178754,
+            "y": 0.2058823529411765,
             "uniqueID": 775508,
             "ioValues": [],
             "topLevel": false,
@@ -244,10 +244,34 @@
                 {
                     "atomType": "Molecule",
                     "name": "Bolts",
-                    "x": 0.618488253319714,
-                    "y": 0.40374331550802134,
+                    "x": 0.5944841675178754,
+                    "y": 0.2058823529411765,
                     "uniqueID": 775508,
                     "ioValues": []
+                },
+                {
+                    "atomType": "Color",
+                    "name": "Color",
+                    "x": 0.46067415730337075,
+                    "y": 0.5989304812834224,
+                    "uniqueID": 792861,
+                    "ioValues": [],
+                    "selectedColorIndex": "10"
+                },
+                {
+                    "atomType": "Add BOM Tag",
+                    "name": "Add BOM Tag",
+                    "x": 0.5832482124616957,
+                    "y": 0.6470588235294118,
+                    "uniqueID": 966075,
+                    "ioValues": [],
+                    "BOMitem": {
+                        "BOMitemName": "Tight Hold Latch",
+                        "numberNeeded": 1,
+                        "costUSD": 3.81,
+                        "source": "https://www.mcmaster.com/1794A41",
+                        "totalNeeded": 1
+                    }
                 },
                 {
                     "atomType": "Assembly",
@@ -268,34 +292,19 @@
                     "removeCutawayGeometry": true
                 },
                 {
-                    "atomType": "Color",
-                    "name": "Color",
-                    "x": 0.4657814096016343,
-                    "y": 0.8048128342245989,
-                    "uniqueID": 792861,
-                    "ioValues": [],
-                    "selectedColorIndex": "10"
-                },
-                {
-                    "atomType": "Add BOM Tag",
-                    "name": "Add BOM Tag",
-                    "x": 0.6384065372829417,
-                    "y": 0.8636363636363636,
-                    "uniqueID": 966075,
-                    "ioValues": [],
-                    "BOMitem": {
-                        "BOMitemName": "Tight Hold Latch",
-                        "numberNeeded": 1,
-                        "costUSD": 3.81,
-                        "source": "https://www.mcmaster.com/1794A41",
-                        "totalNeeded": 1
-                    }
-                },
-                {
                     "atomType": "Output",
                     "name": "Output",
                     "x": 0.9897854954034729,
                     "y": 0.5,
+                    "ioValues": []
+                },
+                {
+                    "atomType": "GitHubMolecule",
+                    "name": "Export as JSON",
+                    "x": 0.8329928498467825,
+                    "y": 0.732620320855615,
+                    "uniqueID": 750462,
+                    "projectID": "230192765",
                     "ioValues": []
                 }
             ],
@@ -323,12 +332,6 @@
                 },
                 {
                     "ap1Name": "geometry",
-                    "ap2Name": "number or geometry",
-                    "ap2Primary": false,
-                    "ap1ID": 996745
-                },
-                {
-                    "ap1Name": "geometry",
                     "ap2Name": "geometry",
                     "ap2Primary": true,
                     "ap1ID": 792861,
@@ -340,6 +343,19 @@
                     "ap2Primary": false,
                     "ap1ID": 966075,
                     "ap2ID": 996745
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "Geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 966075,
+                    "ap2ID": 750462
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 996745
                 }
             ],
             "fileTypeVersion": 1
