@@ -3,12 +3,19 @@
         {
             "atomType": "Molecule",
             "name": "Bolts",
-            "x": 390,
-            "y": 202,
+            "x": 0.618488253319714,
+            "y": 0.40374331550802134,
             "uniqueID": 775508,
             "ioValues": [],
             "topLevel": false,
             "allAtoms": [
+                {
+                    "atomType": "Output",
+                    "name": "Output",
+                    "x": 0.9897854954034729,
+                    "y": 0.5,
+                    "ioValues": []
+                },
                 {
                     "atomType": "GitHubMolecule",
                     "name": "M4x20 Bolt",
@@ -127,13 +134,6 @@
                         }
                     ],
                     "removeCutawayGeometry": true
-                },
-                {
-                    "atomType": "Output",
-                    "name": "Output",
-                    "x": 1316,
-                    "y": 163.5,
-                    "ioValues": []
                 }
             ],
             "allConnectors": [
@@ -214,8 +214,8 @@
                 {
                     "atomType": "Rectangle",
                     "name": "Rectangle",
-                    "x": 195,
-                    "y": 111,
+                    "x": 0.21450459652706844,
+                    "y": 0.4064171122994652,
                     "uniqueID": 877637,
                     "ioValues": [
                         {
@@ -231,8 +231,8 @@
                 {
                     "atomType": "Extrude",
                     "name": "Extrude",
-                    "x": 407,
-                    "y": 96,
+                    "x": 0.35342185903983653,
+                    "y": 0.49465240641711233,
                     "uniqueID": 879347,
                     "ioValues": [
                         {
@@ -244,40 +244,16 @@
                 {
                     "atomType": "Molecule",
                     "name": "Bolts",
-                    "x": 390,
-                    "y": 202,
+                    "x": 0.618488253319714,
+                    "y": 0.40374331550802134,
                     "uniqueID": 775508,
                     "ioValues": []
                 },
                 {
-                    "atomType": "Color",
-                    "name": "Color",
-                    "x": 653,
-                    "y": 79,
-                    "uniqueID": 792861,
-                    "ioValues": [],
-                    "selectedColorIndex": "10"
-                },
-                {
-                    "atomType": "Add BOM Tag",
-                    "name": "Add BOM Tag",
-                    "x": 893,
-                    "y": 86,
-                    "uniqueID": 966075,
-                    "ioValues": [],
-                    "BOMitem": {
-                        "BOMitemName": "Tight Hold Latch",
-                        "numberNeeded": 1,
-                        "costUSD": 3.81,
-                        "source": "https://www.mcmaster.com/1794A41",
-                        "totalNeeded": 1
-                    }
-                },
-                {
                     "atomType": "Assembly",
                     "name": "Assembly",
-                    "x": 1030,
-                    "y": 185,
+                    "x": 0.7579162410623085,
+                    "y": 0.5053475935828877,
                     "uniqueID": 996745,
                     "ioValues": [
                         {
@@ -292,10 +268,34 @@
                     "removeCutawayGeometry": true
                 },
                 {
+                    "atomType": "Color",
+                    "name": "Color",
+                    "x": 0.4657814096016343,
+                    "y": 0.8048128342245989,
+                    "uniqueID": 792861,
+                    "ioValues": [],
+                    "selectedColorIndex": "10"
+                },
+                {
+                    "atomType": "Add BOM Tag",
+                    "name": "Add BOM Tag",
+                    "x": 0.6384065372829417,
+                    "y": 0.8636363636363636,
+                    "uniqueID": 966075,
+                    "ioValues": [],
+                    "BOMitem": {
+                        "BOMitemName": "Tight Hold Latch",
+                        "numberNeeded": 1,
+                        "costUSD": 3.81,
+                        "source": "https://www.mcmaster.com/1794A41",
+                        "totalNeeded": 1
+                    }
+                },
+                {
                     "atomType": "Output",
                     "name": "Output",
-                    "x": 1316,
-                    "y": 163.5,
+                    "x": 0.9897854954034729,
+                    "y": 0.5,
                     "ioValues": []
                 }
             ],
@@ -323,6 +323,12 @@
                 },
                 {
                     "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 996745
+                },
+                {
+                    "ap1Name": "geometry",
                     "ap2Name": "geometry",
                     "ap2Primary": true,
                     "ap1ID": 792861,
@@ -334,16 +340,10 @@
                     "ap2Primary": false,
                     "ap1ID": 966075,
                     "ap2ID": 996745
-                },
-                {
-                    "ap1Name": "geometry",
-                    "ap2Name": "number or geometry",
-                    "ap2Primary": false,
-                    "ap1ID": 996745
                 }
             ],
             "fileTypeVersion": 1
         }
     ],
-    "circleSegmentSize": "0.1"
+    "circleSegmentSize": "4"
 }
