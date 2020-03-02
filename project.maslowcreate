@@ -3,8 +3,8 @@
         {
             "atomType": "Molecule",
             "name": "Bolts",
-            "x": 0.5900439238653001,
-            "y": 0.2298850574712644,
+            "x": 0.5651537335285505,
+            "y": 0.1532567049808429,
             "uniqueID": 775508,
             "ioValues": [],
             "topLevel": false,
@@ -21,17 +21,17 @@
                 {
                     "atomType": "Translate",
                     "name": "Translate",
-                    "x": 0.3299284984678243,
-                    "y": 0.1764705882352941,
-                    "uniqueID": 305926,
+                    "x": 0.3528550512445095,
+                    "y": 0.21455938697318008,
+                    "uniqueID": 840255,
                     "ioValues": [
                         {
                             "name": "xDist",
-                            "ioValue": -22
+                            "ioValue": 22
                         },
                         {
                             "name": "yDist",
-                            "ioValue": -3.968
+                            "ioValue": 7.14
                         },
                         {
                             "name": "zDist",
@@ -42,8 +42,8 @@
                 {
                     "atomType": "Translate",
                     "name": "Translate",
-                    "x": 0.32737487231869256,
-                    "y": 0.3957219251336898,
+                    "x": 0.3550512445095168,
+                    "y": 0.3831417624521073,
                     "uniqueID": 992016,
                     "ioValues": [
                         {
@@ -63,8 +63,8 @@
                 {
                     "atomType": "Translate",
                     "name": "Translate",
-                    "x": 0.32064421669106885,
-                    "y": 0.6168582375478927,
+                    "x": 0.35431918008784774,
+                    "y": 0.5862068965517242,
                     "uniqueID": 403250,
                     "ioValues": [
                         {
@@ -110,17 +110,17 @@
                 {
                     "atomType": "Translate",
                     "name": "Translate",
-                    "x": 0.3110316649642492,
-                    "y": 0.8128342245989304,
-                    "uniqueID": 840255,
+                    "x": 0.35431918008784774,
+                    "y": 0.8007662835249042,
+                    "uniqueID": 305926,
                     "ioValues": [
                         {
                             "name": "xDist",
-                            "ioValue": 22
+                            "ioValue": -22
                         },
                         {
                             "name": "yDist",
-                            "ioValue": 7.14
+                            "ioValue": -3.968
                         },
                         {
                             "name": "zDist",
@@ -167,9 +167,9 @@
                 },
                 {
                     "ap1Name": "geometry",
-                    "ap2Name": "3D shape 1",
+                    "ap2Name": "3D shape 4",
                     "ap2Primary": false,
-                    "ap1ID": 305926,
+                    "ap1ID": 840255,
                     "ap2ID": 315077
                 },
                 {
@@ -194,9 +194,9 @@
                 },
                 {
                     "ap1Name": "geometry",
-                    "ap2Name": "3D shape 4",
+                    "ap2Name": "3D shape 1",
                     "ap2Primary": false,
-                    "ap1ID": 840255,
+                    "ap1ID": 305926,
                     "ap2ID": 315077
                 }
             ],
@@ -214,8 +214,8 @@
                 {
                     "atomType": "Rectangle",
                     "name": "Rectangle",
-                    "x": 0.21450459652706844,
-                    "y": 0.4064171122994652,
+                    "x": 0.20644216691068812,
+                    "y": 0.4176245210727969,
                     "uniqueID": 877637,
                     "ioValues": [
                         {
@@ -231,11 +231,19 @@
                 {
                     "atomType": "Code",
                     "name": "Code",
-                    "x": 0.4904831625183016,
-                    "y": 0.29885057471264365,
+                    "x": 0.47144948755490484,
+                    "y": 0.3065134099616858,
                     "uniqueID": 519977,
                     "ioValues": [],
-                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(input){\n  return bolt();\n}\n\n\nfunction cutAways(){\n    const shape1 = myTranslate(myCircle(60), 60/2,60/2,0);\n    const shape2 = myTranslate(myRectangle(10,10), 300, 5, 0);\n    const shape3 = myTranslate(myRectangle(10,10), 5, 300, 0);\n    \n    const oneWing = shrinkWrap([shape1, shape2, shape3]);\n    const wing1 = myRotate(myTranslate(oneWing, 40, 40, 0), 0, 0, 90);\n    const wing2 = myRotate(myTranslate(oneWing, 40, 40, 0), 0, 0, 180);\n    const wing3 = myRotate(myTranslate(oneWing, 40, 40, 0), 0, 0, 270);\n    const centerCircle = myCircle(69.5);\n    const slice = myRotate(myTranslate(myRectangle(500,4), 250, 0, 0), 0, 0, 45);\n    \n    return myAssemble([wing1, wing2, wing3, centerCircle, slice]);\n}\n\n\nfunction blank(){\n\treturn myTag(myExtrude(myDifference( myCircle(285), cutAways()),10), \"Plate\");\n}\n\nfunction bolt(){\n    const shaft = myTranslate(myExtrude(myCircle(4), 20), 0, 0, -20);\n    const head  = myExtrude(myCircle(7.6), 2.2);\n\treturn myColor(myAssemble([shaft, head]), \"black\");\n}\n\n\nfunction myCircle(diameter){\n\t\n    const circumference  = 3.14*diameter;\n    const numberOfSegments = Math.min(Math.max(parseInt( circumference / 4.6 ),5), 100)\n\t\n    return Circle.ofDiameter(diameter, {sides: numberOfSegments});\n}\n\nfunction myRectangle(x, y){\n\treturn Square(x, y);\n}\n\nfunction myTranslate(inputShape, x, y, z){\n\treturn inputShape.move(x,y,z);\n}\n\nfunction myExtrude(shape, distance){\n\treturn shape.extrude(distance);\n}\n\nfunction shrinkWrap(values){\n\treturn Hull(...values);\n}\n\nfunction myRotate(shape, x, y, z){\n\treturn shape.rotateX(x).rotateY(y).rotateZ(z);\n}\n\nfunction myAssemble(shapes){\n\treturn Assembly(...shapes)\n}\n\nfunction myDifference(shape1, shape2){\n    return shape1.cut(shape2).kept();\n}\n\nfunction myTag(shape, tag){\n    return shape.as(tag);\n}\n\nfunction myColor(shape, tag){\n    return shape.color(tag);\n}\n\nreturn main(input)"
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(input){\n  return fullLatch();\n}\n\n\nfunction cutAways(){\n    const shape1 = myTranslate(myCircle(60), 60/2,60/2,0);\n    const shape2 = myTranslate(myRectangle(10,10), 300, 5, 0);\n    const shape3 = myTranslate(myRectangle(10,10), 5, 300, 0);\n    \n    const oneWing = shrinkWrap([shape1, shape2, shape3]);\n    const wing1 = myRotate(myTranslate(oneWing, 40, 40, 0), 0, 0, 90);\n    const wing2 = myRotate(myTranslate(oneWing, 40, 40, 0), 0, 0, 180);\n    const wing3 = myRotate(myTranslate(oneWing, 40, 40, 0), 0, 0, 270);\n    const centerCircle = myCircle(69.5);\n    const slice = myRotate(myTranslate(myRectangle(500,4), 250, 0, 0), 0, 0, 45);\n    \n    return myAssemble([wing1, wing2, wing3, centerCircle, slice]);\n}\n\n\nfunction blank(){\n\treturn myTag(myExtrude(myDifference( myCircle(285), cutAways()),10), \"Plate\");\n}\n\nfunction bolt(){\n    const shaft = myTranslate(myExtrude(myCircle(4), 20), 0, 0, -20);\n    const head  = myExtrude(myCircle(7.6), 2.2);\n\treturn myColor(myAssemble([shaft, head]), \"black\");\n}\n\nfunction bolts(){\n\tconst bolt1 = myTranslate(bolt(), -22, -3.968, 2);\n    const bolt2 = myTranslate(bolt(), -22, 3.968, 2);\n    const bolt3 = myTranslate(bolt(), 22, 7.14, 2);\n    const bolt4 = myTranslate(bolt(), 22, -7.14, 2);\n    return myAssemble([bolt1, bolt2, bolt4, bolt3]);\n}\n\nfunction latchBlock(){\n    const block = myColor(myExtrude(myRectangle(69.85, 30.16), 11.11), \"silver\");\n    const withBOM = myBOMTag(block, \"{\\\"BOMitemName\\\":\\\"Tight Hold Latch\\\",\\\"numberNeeded\\\":1,\\\"costUSD\\\":3.81,\\\"source\\\":\\\"https://www.mcmaster.com/1794A41\\\",\\\"totalNeeded\\\":1}\")\n    return withBOM;\n}\n\nfunction fullLatch(){\n    return myAssemble([bolts(), latchBlock()]);\n}\n\nfunction myCircle(diameter){\n\t\n    const circumference  = 3.14*diameter;\n    const numberOfSegments = Math.min(Math.max(parseInt( circumference / 4.6 ),5), 100)\n\t\n    return Circle.ofDiameter(diameter, {sides: numberOfSegments});\n}\n\nfunction myRectangle(x, y){\n\treturn Square(x, y);\n}\n\nfunction myTranslate(inputShape, x, y, z){\n\treturn inputShape.move(x,y,z);\n}\n\nfunction myExtrude(shape, distance){\n\treturn shape.extrude(distance);\n}\n\nfunction shrinkWrap(values){\n\treturn Hull(...values);\n}\n\nfunction myRotate(shape, x, y, z){\n\treturn shape.rotateX(x).rotateY(y).rotateZ(z);\n}\n\nfunction myAssemble(shapes){\n\treturn Assembly(...shapes)\n}\n\nfunction myDifference(shape1, shape2){\n    return shape1.cut(shape2).kept();\n}\n\nfunction myTag(shape, tag){\n    return shape.as(tag);\n}\n\nfunction myColor(shape, tag){\n    return shape.color(tag);\n}\n\nfunction myBOMTag(shape, tag){\n    return shape.Item(tag);\n}\n\nreturn main(input)"
+                },
+                {
+                    "atomType": "Molecule",
+                    "name": "Bolts",
+                    "x": 0.5651537335285505,
+                    "y": 0.1532567049808429,
+                    "uniqueID": 775508,
+                    "ioValues": []
                 },
                 {
                     "atomType": "Extrude",
@@ -251,36 +259,13 @@
                     ]
                 },
                 {
-                    "atomType": "Molecule",
-                    "name": "Bolts",
-                    "x": 0.5900439238653001,
-                    "y": 0.2298850574712644,
-                    "uniqueID": 775508,
-                    "ioValues": []
-                },
-                {
                     "atomType": "Color",
                     "name": "Color",
-                    "x": 0.46067415730337075,
-                    "y": 0.5989304812834224,
+                    "x": 0.4670571010248902,
+                    "y": 0.6283524904214559,
                     "uniqueID": 792861,
                     "ioValues": [],
                     "selectedColorIndex": "10"
-                },
-                {
-                    "atomType": "Add BOM Tag",
-                    "name": "Add BOM Tag",
-                    "x": 0.5951683748169839,
-                    "y": 0.6704980842911877,
-                    "uniqueID": 966075,
-                    "ioValues": [],
-                    "BOMitem": {
-                        "BOMitemName": "Tight Hold Latch",
-                        "numberNeeded": 1,
-                        "costUSD": 3.81,
-                        "source": "https://www.mcmaster.com/1794A41",
-                        "totalNeeded": 1
-                    }
                 },
                 {
                     "atomType": "Assembly",
@@ -301,11 +286,35 @@
                     "removeCutawayGeometry": true
                 },
                 {
+                    "atomType": "Add BOM Tag",
+                    "name": "Add BOM Tag",
+                    "x": 0.5732064421669107,
+                    "y": 0.7509578544061302,
+                    "uniqueID": 966075,
+                    "ioValues": [],
+                    "BOMitem": {
+                        "BOMitemName": "Tight Hold Latch",
+                        "numberNeeded": 1,
+                        "costUSD": 3.81,
+                        "source": "https://www.mcmaster.com/1794A41",
+                        "totalNeeded": 1
+                    }
+                },
+                {
                     "atomType": "Output",
                     "name": "Output",
                     "x": 0.9853587115666179,
                     "y": 0.5,
                     "ioValues": []
+                },
+                {
+                    "atomType": "Code",
+                    "name": "Code",
+                    "x": 0.822108345534407,
+                    "y": 0.7739463601532567,
+                    "uniqueID": 860416,
+                    "ioValues": [],
+                    "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1, Input2){\n  if(JSON.stringify(Input1)!= JSON.stringify(Input2)){\n      console.log(\"not equal\");\n      throw \"Not equal\";\n  }\n  else{\n      console.log(\"Equal!\");\n  }\n  return Sphere(40)        //return must be geometry;\n}\n\nreturn main(Input1, Input2)"
                 }
             ],
             "allConnectors": [
@@ -318,10 +327,10 @@
                 },
                 {
                     "ap1Name": "geometry",
-                    "ap2Name": "geometry",
-                    "ap2Primary": true,
-                    "ap1ID": 879347,
-                    "ap2ID": 792861
+                    "ap2Name": "Input1",
+                    "ap2Primary": false,
+                    "ap1ID": 519977,
+                    "ap2ID": 860416
                 },
                 {
                     "ap1Name": "Geometry",
@@ -334,8 +343,28 @@
                     "ap1Name": "geometry",
                     "ap2Name": "geometry",
                     "ap2Primary": true,
+                    "ap1ID": 879347,
+                    "ap2ID": 792861
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "geometry",
+                    "ap2Primary": true,
                     "ap1ID": 792861,
                     "ap2ID": 966075
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "number or geometry",
+                    "ap2Primary": false,
+                    "ap1ID": 996745
+                },
+                {
+                    "ap1Name": "geometry",
+                    "ap2Name": "Input2",
+                    "ap2Primary": false,
+                    "ap1ID": 996745,
+                    "ap2ID": 860416
                 },
                 {
                     "ap1Name": "geometry",
@@ -343,12 +372,6 @@
                     "ap2Primary": false,
                     "ap1ID": 966075,
                     "ap2ID": 996745
-                },
-                {
-                    "ap1Name": "geometry",
-                    "ap2Name": "number or geometry",
-                    "ap2Primary": false,
-                    "ap1ID": 996745
                 }
             ],
             "fileTypeVersion": 1
